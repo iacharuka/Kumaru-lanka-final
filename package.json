@@ -15,7 +15,7 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage",
-    "analyze": "vite-plugin-visualizer --open",
+    "analyze": "vite build",
     "type-check": "tsc --noEmit",
     "serve": "python3 -m http.server 5173"
   },
@@ -33,7 +33,6 @@
     "eslint": "^8.56.0",
     "prettier": "^3.1.1",
     "vite": "^5.0.0",
-    "vite-plugin-visualizer": "^0.10.0",
     "vitest": "^1.0.0",
     "@vitest/ui": "^1.0.0",
     "@vitest/coverage-v8": "^1.0.0"

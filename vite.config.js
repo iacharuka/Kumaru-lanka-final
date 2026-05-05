@@ -2,16 +2,10 @@ import { defineConfig } from 'vite'
 import { resolve } from 'path'
 
 export default defineConfig({
-  root: 'src',
   build: {
-    outDir: '../dist',
+    outDir: 'dist',
     emptyOutDir: true,
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-      },
-    },
+    minify: 'esbuild',
     rollupOptions: {
       output: {
         manualChunks: {
