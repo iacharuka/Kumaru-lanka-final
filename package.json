@@ -3,20 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "description": "Professional tourism website for Kumaru Lanka - Sri Lanka travel and transport services",
-  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
+    "dev": "python3 -m http.server 5173",
+    "serve": "python3 -m http.server 5173",
     "lint": "eslint . --ext .js,.html",
     "lint:fix": "eslint . --ext .js,.html --fix",
     "format": "prettier --write \"**/*.{js,html,css,json,md}\"",
-    "format:check": "prettier --check \"**/*.{js,html,css,json,md}\"",
-    "test": "vitest",
-    "test:ui": "vitest --ui",
-    "test:coverage": "vitest --coverage",
-    "analyze": "vite build",
-    "serve": "python3 -m http.server 5173"
+    "format:check": "prettier --check \"**/*.{js,html,css,json,md}\""
   },
   "keywords": [
     "tourism",
@@ -28,17 +21,10 @@
   "author": "Kumaru Lanka",
   "license": "ISC",
   "devDependencies": {
-    "@vitejs/plugin-basic-ssl": "^1.1.0",
     "eslint": "^8.56.0",
-    "prettier": "^3.1.1",
-    "vite": "^5.0.0",
-    "vitest": "^1.0.0",
-    "@vitest/ui": "^1.0.0",
-    "@vitest/coverage-v8": "^1.0.0"
+    "prettier": "^3.1.1"
   },
-  "dependencies": {
-    "axios": "^1.6.0"
-  },
+  "dependencies": {},
   "engines": {
     "node": ">=16.0.0",
     "npm": ">=8.0.0"
