@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Experiences & Journey | Kumarulanka Tours - Discover unique experiences in Sri Lanka">
+    <meta name="keywords" content="Sri Lanka experiences, cultural experiences, adventure, wildlife, journey">
+    <meta property="og:title" content="Experiences | Kumarulanka Tours">
+    <meta property="og:description" content="Explore diverse experiences and plan your perfect Sri Lanka journey.">
+    <meta property="og:type" content="website">
+    <title>Experiences | Kumarulanka Tours</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- GSAP and ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-header {
+            padding: 80px 20px 40px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--green-mid) 0%, var(--green-deep) 100%);
+            color: white;
+        }
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+        .page-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-kumarulanka">Kumarulanka</span>
+                <span class="logo-tours">Tours</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="tours.html" class="nav-link">Tours</a>
+                <a href="destinations.html" class="nav-link">Destinations</a>
+                <a href="experiences.html" class="nav-link">Experiences</a>
+                <a href="vehicles.html" class="nav-link">Vehicles</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <a href="https://wa.me/94703577490?text=Hello%20Kumarulanka%20Tours!%20I'd%20like%20to%20plan%20my%20trip%20to%20Sri%20Lanka." class="nav-cta magnetic-btn" id="navCta" target="_blank">
+                Plan My Trip
+                <i class="fas fa-arrow-right"></i>
+            </a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-content">
+                <a href="tours.html" class="mobile-link">Tours</a>
+                <a href="destinations.html" class="mobile-link">Destinations</a>
+                <a href="experiences.html" class="mobile-link">Experiences</a>
+                <a href="vehicles.html" class="mobile-link">Vehicles</a>
+                <a href="contact.html" class="mobile-link">Contact</a>
+                <a href="https://wa.me/94703577490?text=Hello%20Kumarulanka%20Tours!%20I'd%20like%20to%20plan%20my%20trip%20to%20Sri%20Lanka." class="mobile-cta" target="_blank">
+                    Plan My Trip
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== PAGE HEADER ========== -->
+    <div class="page-header">
+        <h1>Your Sri Lanka Journey</h1>
+        <p>Experience the magic of our curated adventure</p>
+    </div>
+
+    <!-- ========== JOURNEY STORYTELLING SECTION ========== -->
+    <section class="journey" id="journey">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Your Perfect Sri Lanka Journey</h2>
+                <p class="section-subtitle">Four simple steps to your dream vacation, crafted with care and expertise.</p>
+            </div>
+                <div class="journey-timeline">
+                    <!-- Step 1 -->
+                    <div class="timeline-step" data-aos="fade-right">
+                        <div class="step-icon">
+                            <i class="fas fa-map"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Share Your Dream</h3>
+                            <p class="step-description">Tell us your dates, interests, and travel style. We listen first, then design.</p>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="timeline-step" data-aos="fade-right" data-aos-delay="100">
+                        <div class="step-icon">
+                            <i class="fas fa-pen-nib"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">We Design Your Route</h3>
+                            <p class="step-description">A custom private itinerary crafted just for you, balancing must-sees with hidden gems.</p>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="timeline-step" data-aos="fade-right" data-aos-delay="200">
+                        <div class="step-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Travel in Comfort</h3>
+                            <p class="step-description">Professional local driver, clean vehicle, flexible timing. Stress-free exploration.</p>
+                        </div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="timeline-step" data-aos="fade-right" data-aos-delay="300">
+                        <div class="step-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Create Lifelong Memories</h3>
+                            <p class="step-description">Experience Sri Lanka stress-free with expert guidance every step of the way.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="journey-visual">
+                    <div class="card-stack" id="cardStack">
+                        <div class="stack-card active">
+                            <img src="assets/images/dest-sigiriya.jpg" alt="Sigiriya" loading="lazy">
+                        </div>
+                        <div class="stack-card">
+                            <img src="assets/images/dest-ella.jpg" alt="Ella" loading="lazy">
+                        </div>
+                        <div class="stack-card">
+                            <img src="assets/images/dest-mirissa.jpg" alt="Mirissa" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <!-- ========== EXPERIENCE CATEGORIES SECTION ========== -->
+    <section class="experiences" id="experiences">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Experience Categories</h2>
+                <p class="section-subtitle">From ancient wonders to coastal bliss — find your perfect Sri Lankan experience.</p>
+            </div>
+                <div class="experiences-grid">
+                    <div class="experience-card glass-card" data-aos="fade-up">
+                        <div class="exp-icon">🏛️</div>
+                        <h3 class="exp-title">Cultural Heritage</h3>
+                        <p class="exp-desc">Explore ancient kingdoms, UNESCO sites, and sacred temples with expert guides.</p>
+                    </div>
+                    <div class="experience-card glass-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="exp-icon">🐘</div>
+                        <h3 class="exp-title">Wildlife & Safari</h3>
+                        <p class="exp-desc">Spot leopards, elephants, and exotic birds in Sri Lanka's premier national parks.</p>
+                    </div>
+                    <div class="experience-card glass-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="exp-icon">🏄</div>
+                        <h3 class="exp-title">Beaches & Whale Watching</h3>
+                        <p class="exp-desc">Surf, swim, and watch blue whales along Sri Lanka's pristine coastline.</p>
+                    </div>
+                    <div class="experience-card glass-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="exp-icon">🍵</div>
+                        <h3 class="exp-title">Hill Country & Tea Estates</h3>
+                        <p class="exp-desc">Wander through emerald tea plantations and misty mountain villages.</p>
+                    </div>
+                    <div class="experience-card glass-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="exp-icon">🏰</div>
+                        <h3 class="exp-title">Ancient Cities</h3>
+                        <p class="exp-desc">Walk through history in Anuradhapura, Polonnaruwa, and Dambulla.</p>
+                    </div>
+                    <div class="experience-card glass-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="exp-icon">🚗</div>
+                        <h3 class="exp-title">Private Transport</h3>
+                        <p class="exp-desc">Comfortable, safe, and flexible private transport with English-speaking drivers.</p>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer" id="footer">
+        <div class="footer-particles" id="footerParticles"></div>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">
+                        <span class="logo-kumarulanka">Kumarulanka</span>
+                        <span class="logo-tours">Tours</span>
+                    </h3>
+                    <p class="footer-tagline">Luxury private Sri Lanka experiences, crafted with passion and expertise.</p>
+                    <div class="social-icons">
+                        <a href="https://facebook.com/kumarulankatours" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/kumarulankatours" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/94703577490" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:kumarulankatours@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-heading">Explore</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tours.html">Tours</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="experiences.html">Experiences</a></li>
+                        <li><a href="vehicles.html">Vehicles</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-heading">Popular Tours</h4>
+                    <ul>
+                        <li><a href="tours.html">Cultural Triangle Discovery</a></li>
+                        <li><a href="tours.html">Ella Mountain Adventure</a></li>
+                        <li><a href="tours.html">Yala & Udawalawe Safari</a></li>
+                        <li><a href="tours.html">South Coast Beach Escape</a></li>
+                        <li><a href="tours.html">Full Island Grand Tour</a></li>
+                        <li><a href="tours.html">Ayurveda & Wellness Retreat</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Sri Lanka</li>
+                        <li><i class="fab fa-whatsapp"></i> +94 70 357 7490</li>
+                        <li><i class="fas fa-envelope"></i> kumarulankatours@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Daily 7:00 AM – 9:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="golden-rule"></div>
+            <div class="footer-bottom">
+                <p>© 2026 Kumarulanka Tours. All Rights Reserved.</p>
+                <p>Made with ❤️ in Sri Lanka</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky WhatsApp CTA -->
+    <div class="mobile-whatsapp-sticky" id="mobileWhatsApp">
+        <a href="https://wa.me/94703577490?text=Hello%20Kumarulanka%20Tours!%20I'd%20like%20to%20book%20a%20tour%20to%20Sri%20Lanka." target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            Chat on WhatsApp
+        </a>
+    </div>
+
+    <!-- Main Script -->
+    <script src="main.js"></script>
+</body>
+</html>

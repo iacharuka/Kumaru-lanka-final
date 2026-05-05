@@ -1,0 +1,69 @@
+<!-- ============================================================
+     destinations.html
+     ============================================================ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Destinations — Kumaru Lanka</title>
+  <link rel="stylesheet" href="../css/main.css"/>
+  <link rel="stylesheet" href="../css/components.css"/>
+  <link rel="stylesheet" href="../css/pages.css"/>
+</head>
+<body>
+<nav id="navbar"></nav>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="tag">Destinations</div>
+    <h1>Discover Sri Lanka</h1>
+    <p>10 incredible destinations — from UNESCO fortresses to pristine beaches.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="tabs" id="destTabs">
+      <button class="tab active" onclick="filterDests('all',this)">All</button>
+      <button class="tab" onclick="filterDests('heritage',this)">Heritage</button>
+      <button class="tab" onclick="filterDests('beach',this)">Beach</button>
+      <button class="tab" onclick="filterDests('wildlife',this)">Wildlife</button>
+      <button class="tab" onclick="filterDests('nature',this)">Nature</button>
+      <button class="tab" onclick="filterDests('cultural',this)">Cultural</button>
+    </div>
+    <div class="dest-grid" id="destGrid"></div>
+  </div>
+</section>
+
+<footer id="footer"></footer>
+<div id="booking-modal"></div>
+<div id="whatsapp-btn"></div>
+<div id="ai-chat-btn"></div>
+
+<script src="../models/destinations.js"></script>
+<script src="../models/tours.js"></script>
+  <script src="../models/vehicles.js"></script>
+  <script src="../models/reviews.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/destination-data.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/components.js"></script>
+  <script src="../js/chat.js"></script>
+  <script>
+  let currentDestType = "all";
+  let pageDestinations = [];
+
+  document.addEventListener("DOMContentLoaded", async () => {
+    pageDestinations = await getPublicDestinations();
+    renderDestGrid("destGrid", pageDestinations);
+  });
+
+  function filterDests(type, btn) {
+    currentDestType = type;
+    document.querySelectorAll("#destTabs .tab").forEach(t => t.classList.remove("active"));
+    btn.classList.add("active");
+    renderDestGrid("destGrid", filterPublicDestinations(pageDestinations, currentDestType));
+  }
+  </script>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Destinations | Kumarulanka Tours - Discover Sri Lanka's most iconic places">
+    <meta name="keywords" content="Sri Lanka destinations, places to visit, Sigiriya, Kandy, Ella, Galle">
+    <meta property="og:title" content="Destinations | Kumarulanka Tours">
+    <meta property="og:description" content="Explore Sri Lanka's most iconic destinations with our local experts.">
+    <meta property="og:type" content="website">
+    <title>Destinations | Kumarulanka Tours</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- GSAP and ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-header {
+            padding: 80px 20px 40px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--green-mid) 0%, var(--green-deep) 100%);
+            color: white;
+        }
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+        .page-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-kumarulanka">Kumarulanka</span>
+                <span class="logo-tours">Tours</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="tours.html" class="nav-link">Tours</a>
+                <a href="destinations.html" class="nav-link">Destinations</a>
+                <a href="experiences.html" class="nav-link">Experiences</a>
+                <a href="vehicles.html" class="nav-link">Vehicles</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <a href="https://wa.me/94703577490?text=Hello%20Kumarulanka%20Tours!%20I'd%20like%20to%20plan%20my%20trip%20to%20Sri%20Lanka." class="nav-cta magnetic-btn" id="navCta" target="_blank">
+                Plan My Trip
+                <i class="fas fa-arrow-right"></i>
+            </a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-content">
+                <a href="tours.html" class="mobile-link">Tours</a>
+                <a href="destinations.html" class="mobile-link">Destinations</a>
+                <a href="experiences.html" class="mobile-link">Experiences</a>
+                <a href="vehicles.html" class="mobile-link">Vehicles</a>
+                <a href="contact.html" class="mobile-link">Contact</a>
+                <a href="https://wa.me/94703577490?text=Hello%20Kumarulanka%20Tours!%20I'd%20like%20to%20plan%20my%20trip%20to%20Sri%20Lanka." class="mobile-cta" target="_blank">
+                    Plan My Trip
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== PAGE HEADER ========== -->
+    <div class="page-header">
+        <h1>Explore Destinations</h1>
+        <p>Discover Sri Lanka's most iconic places</p>
+    </div>
+
+    <!-- ========== DESTINATIONS SECTION ========== -->
+    <section class="destinations" id="destinations">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Sri Lanka's Most Iconic Places</h2>
+                <p class="section-subtitle">From ancient rock fortresses to pristine coastlines — discover where your journey begins.</p>
+            </div>
+            <div class="destinations-grid">
+                <!-- Destination 1: Sigiriya (Large Card) -->
+                <div class="destination-card large" data-aos="fade-up">
+                    <div class="card-image">
+                        <img src="assets/images/dest-sigiriya.jpg" alt="Sigiriya Rock Fortress" loading="lazy">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-category">Heritage</div>
+                    <div class="card-content">
+                        <h3 class="card-title">Sigiriya</h3>
+                        <p class="card-description">Ancient rock fortress with stunning frescoes and panoramic views from the Lion Rock summit.</p>
+                        <a href="https://wa.me/94703577490?text=Hello%20Kumarulanka%20Tours!%20I'm%20interested%20in%20Sigiriya%20tours.%20Please%20send%20details%20and%20availability." class="card-cta" target="_blank">Explore →</a>
+                    </div>
+                </div>
+
+                <!-- Destination 2: Kandy (Tall Card) -->
+                <div class="destination-card tall" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-image">
+                        <img src="assets/images/dest-kandy.jpg" alt="Kandy Temple of the Tooth" loading="lazy">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-category">Cultural</div>
+                    <div class="card-content">
+                        <h3 class="card-title">Kandy</h3>
+                        <p class="card-description">Cultural capital home to the sacred Temple of the Tooth, surrounded by lush hills and tea plantations.</p>
+                        <a href="https://wa.me/94703577490?text=Hello%20Kumarulanka%20Tours!%20I'm%20interested%20in%20Kandy%20tours.%20Please%20send%20details%20and%20availability." class="card-cta" target="_blank">Explore →</a>
+                    </div>
+                </div>
+
+                <!-- Destination 3: Ella -->
+                <div class="destination-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-image">
+                        <img src="assets/images/dest-ella.jpg" alt="Ella Nine Arch Bridge" loading="lazy">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-category">Hill Country</div>
+                    <div class="card-content">
+                        <h3 class="card-title">Ella</h3>
+                        <p class="card-description">Mountain village with breathtaking viewpoints, waterfalls, and the famous Nine Arch Bridge.</p>
+                        <a href="https://wa.me/94703577490?text=Hello%20Kumarulanka%20Tours!%20I'm%20interested%20in%20Ella%20tours.%20Please%20send%20details%20and%20availability." class="card-cta" target="_blank">Explore →</a>
+                    </div>
+                </div>
+
+                <!-- Destination 4: Galle -->
+                <div class="destination-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-image">
+                        <img src="assets/images/dest-galle.jpg" alt="Galle Fort" loading="lazy">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-category">Heritage</div>
+                    <div class="card-content">
+                        <h3 class="card-title">Galle</h3>
+                        <p class="card-description">Colonial-era fort city with Dutch architecture, lighthouses, and cobblestone streets.</p>
+                        <a href="https://wa.me/94703577490?text=Hello%20Kumarulanka%20Tours!%20I'm%20interested%20in%20Galle%20tours.%20Please%20send%20details%20and%20availability." class="card-cta" target="_blank">Explore →</a>
+                    </div>
+                </div>
+
+                <!-- Destination 5: Yala National Park -->
+                <div class="destination-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card-image">
+                        <img src="assets/images/dest-yala.jpg" alt="Yala National Park Safari" loading="lazy">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-category">Wildlife</div>
+                    <div class="card-content">
+                        <h3 class="card-title">Yala National Park</h3>
+                        <p class="card-description">Premier safari destination with leopards, elephants, sloth bears, and diverse birdlife.</p>
+                        <a href="https://wa.me/94703577490?text=Hello%20Kumarulanka%20Tours!%20I'm%20interested%20in%20Yala%20Safari.%20Please%20send%20details%20and%20availability." class="card-cta" target="_blank">Explore →</a>
+                    </div>
+                </div>
+
+                <!-- Destination 6: Mirissa (Wide Card) -->
+                <div class="destination-card wide" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card-image">
+                        <img src="assets/images/dest-mirissa.jpg" alt="Mirissa Beach" loading="lazy">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-category">Beach</div>
+                    <div class="card-content">
+                        <h3 class="card-title">Mirissa</h3>
+                        <p class="card-description">Tropical paradise for whale watching, surfing, and golden sunsets on pristine beaches.</p>
+                        <a href="https://wa.me/94703577490?text=Hello%20Kumarulanka%20Tours!%20I'm%20interested%20in%20Mirissa%20tours.%20Please%20send%20details%20and%20availability." class="card-cta" target="_blank">Explore →</a>
+                    </div>
+                </div>
+
+                <!-- Destination 7: Nuwara Eliya -->
+                <div class="destination-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card-image">
+                        <img src="assets/images/dest-nuwara-eliya.jpg" alt="Nuwara Eliya Tea Plantations" loading="lazy">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-category">Hill Country</div>
+                    <div class="card-content">
+                        <h3 class="card-title">Nuwara Eliya</h3>
+                        <p class="card-description">Little England of Sri Lanka, famous for tea estates, waterfalls, and cool climate.</p>
+                        <a href="https://wa.me/94703577490?text=Hello%20Kumarulanka%20Tours!%20I'm%20interested%20in%20Nuwara%20Eliya%20tours.%20Please%20send%20details%20and%20availability." class="card-cta" target="_blank">Explore →</a>
+                    </div>
+                </div>
+
+                <!-- Destination 8: Trincomalee -->
+                <div class="destination-card" data-aos="fade-up" data-aos-delay="700">
+                    <div class="card-image">
+                        <img src="assets/images/dest-trincomalee.jpg" alt="Trincomalee Harbor" loading="lazy">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-category">Beach</div>
+                    <div class="card-content">
+                        <h3 class="card-title">Trincomalee</h3>
+                        <p class="card-description">Natural harbor city with pristine beaches, whale watching, and ancient Hindu temples.</p>
+                        <a href="https://wa.me/94703577490?text=Hello%20Kumarulanka%20Tours!%20I'm%20interested%20in%20Trincomalee%20tours.%20Please%20send%20details%20and%20availability." class="card-cta" target="_blank">Explore →</a>
+                    </div>
+                </div>
+
+                <!-- Destination 9: Anuradhapura -->
+                <div class="destination-card" data-aos="fade-up" data-aos-delay="800">
+                    <div class="card-image">
+                        <img src="assets/images/dest-anuradhapura.jpg" alt="Anuradhapura Ancient City" loading="lazy">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-category">Heritage</div>
+                    <div class="card-content">
+                        <h3 class="card-title">Anuradhapura</h3>
+                        <p class="card-description">Ancient capital with sacred Bodhi tree, massive stupas, and UNESCO World Heritage ruins.</p>
+                        <a href="https://wa.me/94703577490?text=Hello%20Kumarulanka%20Tours!%20I'm%20interested%20in%20Anuradhapura%20tours.%20Please%20send%20details%20and%20availability." class="card-cta" target="_blank">Explore →</a>
+                    </div>
+                </div>
+
+                <!-- Destination 10: Sinharaja Forest -->
+                <div class="destination-card" data-aos="fade-up" data-aos-delay="900">
+                    <div class="card-image">
+                        <img src="assets/images/dest-sinharaja.jpg" alt="Sinharaja Forest Reserve" loading="lazy">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-category">Wildlife</div>
+                    <div class="card-content">
+                        <h3 class="card-title">Sinharaja Forest</h3>
+                        <p class="card-description">UNESCO rainforest reserve with endemic birds, reptiles, and lush tropical biodiversity.</p>
+                        <a href="https://wa.me/94703577490?text=Hello%20Kumarulanka%20Tours!%20I'm%20interested%20in%20Sinharaja%20Forest%20tours.%20Please%20send%20details%20and%20availability." class="card-cta" target="_blank">Explore →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer" id="footer">
+        <div class="footer-particles" id="footerParticles"></div>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">
+                        <span class="logo-kumarulanka">Kumarulanka</span>
+                        <span class="logo-tours">Tours</span>
+                    </h3>
+                    <p class="footer-tagline">Luxury private Sri Lanka experiences, crafted with passion and expertise.</p>
+                    <div class="social-icons">
+                        <a href="https://facebook.com/kumarulankatours" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/kumarulankatours" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/94703577490" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:kumarulankatours@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-heading">Explore</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tours.html">Tours</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="experiences.html">Experiences</a></li>
+                        <li><a href="vehicles.html">Vehicles</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-heading">Popular Tours</h4>
+                    <ul>
+                        <li><a href="tours.html">Cultural Triangle Discovery</a></li>
+                        <li><a href="tours.html">Ella Mountain Adventure</a></li>
+                        <li><a href="tours.html">Yala & Udawalawe Safari</a></li>
+                        <li><a href="tours.html">South Coast Beach Escape</a></li>
+                        <li><a href="tours.html">Full Island Grand Tour</a></li>
+                        <li><a href="tours.html">Ayurveda & Wellness Retreat</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Sri Lanka</li>
+                        <li><i class="fab fa-whatsapp"></i> +94 70 357 7490</li>
+                        <li><i class="fas fa-envelope"></i> kumarulankatours@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Daily 7:00 AM – 9:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="golden-rule"></div>
+            <div class="footer-bottom">
+                <p>© 2026 Kumarulanka Tours. All Rights Reserved.</p>
+                <p>Made with ❤️ in Sri Lanka</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky WhatsApp CTA -->
+    <div class="mobile-whatsapp-sticky" id="mobileWhatsApp">
+        <a href="https://wa.me/94703577490?text=Hello%20Kumarulanka%20Tours!%20I'd%20like%20to%20book%20a%20tour%20to%20Sri%20Lanka." target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            Chat on WhatsApp
+        </a>
+    </div>
+
+    <!-- Main Script -->
+    <script src="main.js"></script>
+</body>
+</html>

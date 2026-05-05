@@ -1,0 +1,94 @@
+
+<!-- ============================================================
+     tours.html
+     ============================================================ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Tours — Kumaru Lanka</title>
+  <link rel="stylesheet" href="../css/main.css"/>
+  <link rel="stylesheet" href="../css/components.css"/>
+  <link rel="stylesheet" href="../css/pages.css"/>
+</head>
+<body>
+<nav id="navbar"></nav>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="tag">All Packages</div>
+    <h1>Explore Our Tours</h1>
+    <p>12 handcrafted Sri Lanka experiences for every type of traveller.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="tours-search-bar">
+      <input type="text" id="tourSearch" placeholder="Search tours..." oninput="handleTourSearch()"/>
+      <select id="tourSort" onchange="handleTourSearch()">
+        <option value="default">Sort by: Default</option>
+        <option value="price-asc">Price: Low to High</option>
+        <option value="price-desc">Price: High to Low</option>
+        <option value="rating">Highest Rated</option>
+        <option value="duration">Duration</option>
+      </select>
+    </div>
+    <div class="tabs" id="tourTabs">
+      <button class="tab active" onclick="filterTours('all',this)">All (12)</button>
+      <button class="tab" onclick="filterTours('cultural',this)">Cultural</button>
+      <button class="tab" onclick="filterTours('adventure',this)">Adventure</button>
+      <button class="tab" onclick="filterTours('wildlife',this)">Wildlife</button>
+      <button class="tab" onclick="filterTours('beach',this)">Beach</button>
+      <button class="tab" onclick="filterTours('wellness',this)">Wellness</button>
+    </div>
+    <div class="tours-grid" id="tourGrid"></div>
+  </div>
+</section>
+
+<footer id="footer"></footer>
+<div id="booking-modal"></div>
+<div id="whatsapp-btn"></div>
+<div id="ai-chat-btn"></div>
+
+<script src="../models/destinations.js"></script>
+<script src="../models/tours.js"></script>
+  <script src="../models/vehicles.js"></script>
+  <script src="../models/reviews.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/tour-data.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/components.js"></script>
+  <script src="../js/chat.js"></script>
+  <script>
+    let currentCat = "all";
+    let publicTours = [];
+
+    document.addEventListener("DOMContentLoaded", async () => {
+      const params = new URLSearchParams(window.location.search);
+      const q = params.get("q");
+      publicTours = await getPublicTours();
+
+      if (q) {
+        document.getElementById("tourSearch").value = q;
+      }
+
+      handleTourSearch();
+    });
+
+  function filterTours(cat, btn) {
+    currentCat = cat;
+    document.querySelectorAll("#tourTabs .tab").forEach(t => t.classList.remove("active"));
+    btn.classList.add("active");
+    handleTourSearch();
+  }
+
+    function handleTourSearch() {
+      const q = document.getElementById("tourSearch").value.trim();
+      const sort = document.getElementById("tourSort").value;
+      const results = filterPublicTours(publicTours, currentCat, q, sort);
+      renderTourGrid("tourGrid", results);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Our Tours | Kumarulanka Tours - Discover curated private tour packages across Sri Lanka">
+    <meta name="keywords" content="Sri Lanka tours, tour packages, cultural tours, wildlife safari, beach escapes">
+    <meta property="og:title" content="Tours | Kumarulanka Tours">
+    <meta property="og:description" content="Browse our curated collection of private tour experiences across Sri Lanka.">
+    <meta property="og:type" content="website">
+    <title>Tours | Kumarulanka Tours</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- GSAP and ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-header {
+            padding: 80px 20px 40px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--green-mid) 0%, var(--green-deep) 100%);
+            color: white;
+        }
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+        .page-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-kumarulanka">Kumarulanka</span>
+                <span class="logo-tours">Tours</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="tours.html" class="nav-link">Tours</a>
+                <a href="destinations.html" class="nav-link">Destinations</a>
+                <a href="experiences.html" class="nav-link">Experiences</a>
+                <a href="vehicles.html" class="nav-link">Vehicles</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <a href="https://wa.me/94703577490?text=Hello%20Kumarulanka%20Tours!%20I'd%20like%20to%20plan%20my%20trip%20to%20Sri%20Lanka." class="nav-cta magnetic-btn" id="navCta" target="_blank">
+                Plan My Trip
+                <i class="fas fa-arrow-right"></i>
+            </a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-content">
+                <a href="tours.html" class="mobile-link">Tours</a>
+                <a href="destinations.html" class="mobile-link">Destinations</a>
+                <a href="experiences.html" class="mobile-link">Experiences</a>
+                <a href="vehicles.html" class="mobile-link">Vehicles</a>
+                <a href="contact.html" class="mobile-link">Contact</a>
+                <a href="https://wa.me/94703577490?text=Hello%20Kumarulanka%20Tours!%20I'd%20like%20to%20plan%20my%20trip%20to%20Sri%20Lanka." class="mobile-cta" target="_blank">
+                    Plan My Trip
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== PAGE HEADER ========== -->
+    <div class="page-header">
+        <h1>Our Curated Tours</h1>
+        <p>Handcrafted journeys designed for discerning travelers</p>
+    </div>
+
+    <!-- ========== TOUR PACKAGES SECTION ========== -->
+    <section class="tours" id="tours">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Curated Private Experiences</h2>
+                <p class="section-subtitle">Handcrafted journeys designed for discerning travelers who seek authenticity and luxury.</p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="tour-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="Cultural">Cultural</button>
+                <button class="filter-btn" data-filter="Adventure">Adventure</button>
+                <button class="filter-btn" data-filter="Wildlife">Wildlife</button>
+                <button class="filter-btn" data-filter="Beach">Beach</button>
+                <button class="filter-btn" data-filter="Wellness">Wellness</button>
+            </div>
+
+            <!-- Tour Grid (Copied from index.html tours section) -->
+            <div class="tours-grid" id="toursGrid">
+                <!-- Tour 1: Cultural Triangle Discovery -->
+                <div class="tour-card tilt-card" data-category="Cultural" data-aos="fade-up">
+                    <div class="tour-image">
+                        <img src="assets/images/tour-cultural-triangle.jpg" alt="Cultural Triangle Discovery" loading="lazy">
+                        <div class="tour-badge">Cultural</div>
+                    </div>
+                    <div class="tour-body">
+                        <h3 class="tour-name">Cultural Triangle Discovery</h3>
+                        <div class="tour-meta">
+                            <span><i class="far fa-clock"></i> 5 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Sigiriya</span>
+                        </div>
+                        <div class="tour-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span>4.8 (124 reviews)</span>
+                        </div>
+                        <div class="tour-highlights">
+                            <span><i class="fas fa-check"></i> Sigiriya Rock</span>
+                            <span><i class="fas fa-check"></i> Dambulla Cave</span>
+                            <span><i class="fas fa-check"></i> Polonnaruwa</span>
+                        </div>
+                        <div class="tour-footer">
+                            <div class="tour-price">
+                                <span class="price-from">From</span>
+                                <span class="price-amount">$450</span>
+                                <span class="price-per">per person</span>
+                            </div>
+                            <div class="tour-buttons">
+                                <button class="btn-ghost tour-details-btn">View Details</button>
+                                <a href="https://wa.me/94703577490?text=Hello%20Kumarulanka%20Tours!%20I'm%20interested%20in%20Cultural%20Triangle%20Discovery.%20Please%20send%20details%20and%20availability." class="btn-primary tour-book-btn" target="_blank">Book Now →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour 2: Ella Mountain Adventure -->
+                <div class="tour-card tilt-card" data-category="Adventure" data-aos="fade-up" data-aos-delay="100">
+                    <div class="tour-image">
+                        <img src="assets/images/tour-ella-adventure.jpg" alt="Ella Mountain Adventure" loading="lazy">
+                        <div class="tour-badge">Adventure</div>
+                    </div>
+                    <div class="tour-body">
+                        <h3 class="tour-name">Ella Mountain Adventure</h3>
+                        <div class="tour-meta">
+                            <span><i class="far fa-clock"></i> 4 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Ella</span>
+                        </div>
+                        <div class="tour-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.9 (98 reviews)</span>
+                        </div>
+                        <div class="tour-highlights">
+                            <span><i class="fas fa-check"></i> Nine Arch Bridge</span>
+                            <span><i class="fas fa-check"></i> Little Adam's Peak</span>
+                            <span><i class="fas fa-check"></i> Tea Plantations</span>
+                        </div>
+                        <div class="tour-footer">
+                            <div class="tour-price">
+                                <span class="price-from">From</span>
+                                <span class="price-amount">$380</span>
+                                <span class="price-per">per person</span>
+                            </div>
+                            <div class="tour-buttons">
+                                <button class="btn-ghost tour-details-btn">View Details</button>
+                                <a href="https://wa.me/94703577490?text=Hello%20Kumarulanka%20Tours!%20I'm%20interested%20in%20Ella%20Mountain%20Adventure.%20Please%20send%20details%20and%20availability." class="btn-primary tour-book-btn" target="_blank">Book Now →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour 3: Yala & Udawalawe Safari -->
+                <div class="tour-card tilt-card" data-category="Wildlife" data-aos="fade-up" data-aos-delay="200">
+                    <div class="tour-image">
+                        <img src="assets/images/tour-safari.jpg" alt="Yala & Udawalawe Safari" loading="lazy">
+                        <div class="tour-badge">Wildlife</div>
+                    </div>
+                    <div class="tour-body">
+                        <h3 class="tour-name">Yala & Udawalawe Safari</h3>
+                        <div class="tour-meta">
+                            <span><i class="far fa-clock"></i> 3 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Yala</span>
+                        </div>
+                        <div class="tour-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span>4.8 (156 reviews)</span>
+                        </div>
+                        <div class="tour-highlights">
+                            <span><i class="fas fa-check"></i> Leopard Spotting</span>
+                            <span><i class="fas fa-check"></i> Elephant Herds</span>
+                            <span><i class="fas fa-check"></i> Bird Watching</span>
+                        </div>
+                        <div class="tour-footer">
+                            <div class="tour-price">
+                                <span class="price-from">From</span>
+                                <span class="price-amount">$320</span>
+                                <span class="price-per">per person</span>
+                            </div>
+                            <div class="tour-buttons">
+                                <button class="btn-ghost tour-details-btn">View Details</button>
+                                <a href="https://wa.me/94703577490?text=Hello%20Kumarulanka%20Tours!%20I'm%20interested%20in%20Yala%20%26%20Udawalawe%20Safari.%20Please%20send%20details%20and%20availability." class="btn-primary tour-book-btn" target="_blank">Book Now →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour 4: South Coast Beach Escape -->
+                <div class="tour-card tilt-card" data-category="Beach" data-aos="fade-up" data-aos-delay="300">
+                    <div class="tour-image">
+                        <img src="assets/images/tour-south-coast.jpg" alt="South Coast Beach Escape" loading="lazy">
+                        <div class="tour-badge">Beach</div>
+                    </div>
+                    <div class="tour-body">
+                        <h3 class="tour-name">South Coast Beach Escape</h3>
+                        <div class="tour-meta">
+                            <span><i class="far fa-clock"></i> 5 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Mirissa</span>
+                        </div>
+                        <div class="tour-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.9 (112 reviews)</span>
+                        </div>
+                        <div class="tour-highlights">
+                            <span><i class="fas fa-check"></i> Whale Watching</span>
+                            <span><i class="fas fa-check"></i> Surfing Lessons</span>
+                            <span><i class="fas fa-check"></i> Sunset Cruises</span>
+                        </div>
+                        <div class="tour-footer">
+                            <div class="tour-price">
+                                <span class="price-from">From</span>
+                                <span class="price-amount">$420</span>
+                                <span class="price-per">per person</span>
+                            </div>
+                            <div class="tour-buttons">
+                                <button class="btn-ghost tour-details-btn">View Details</button>
+                                <a href="https://wa.me/94703577490?text=Hello%20Kumarulanka%20Tours!%20I'm%20interested%20in%20South%20Coast%20Beach%20Escape.%20Please%20send%20details%20and%20availability." class="btn-primary tour-book-btn" target="_blank">Book Now →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour 5: Kandy & Nuwara Eliya Highlights -->
+                <div class="tour-card tilt-card" data-category="Cultural" data-aos="fade-up" data-aos-delay="400">
+                    <div class="tour-image">
+                        <img src="assets/images/tour-kandy-nuwara.jpg" alt="Kandy & Nuwara Eliya Highlights" loading="lazy">
+                        <div class="tour-badge">Cultural</div>
+                    </div>
+                    <div class="tour-body">
+                        <h3 class="tour-name">Kandy & Nuwara Eliya Highlights</h3>
+                        <div class="tour-meta">
+                            <span><i class="far fa-clock"></i> 4 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Kandy</span>
+                        </div>
+                        <div class="tour-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span>4.8 (87 reviews)</span>
+                        </div>
+                        <div class="tour-highlights">
+                            <span><i class="fas fa-check"></i> Temple of the Tooth</span>
+                            <span><i class="fas fa-check"></i> Tea Factory Tour</span>
+                            <span><i class="fas fa-check"></i> Botanical Gardens</span>
+                        </div>
+                        <div class="tour-footer">
+                            <div class="tour-price">
+                                <span class="price-from">From</span>
+                                <span class="price-amount">$390</span>
+                                <span class="price-per">per person</span>
+                            </div>
+                            <div class="tour-buttons">
+                                <button class="btn-ghost tour-details-btn">View Details</button>
+                                <a href="https://wa.me/94703577490?text=Hello%20Kumarulanka%20Tours!%20I'm%20interested%20in%20Kandy%20%26%20Nuwara%20Eliya%20Highlights.%20Please%20send%20details%20and%20availability." class="btn-primary tour-book-btn" target="_blank">Book Now →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour 6: Island Hopping & Diving -->
+                <div class="tour-card tilt-card" data-category="Beach" data-aos="fade-up" data-aos-delay="500">
+                    <div class="tour-image">
+                        <img src="assets/images/tour-island-hopping.jpg" alt="Island Hopping & Diving" loading="lazy">
+                        <div class="tour-badge">Beach</div>
+                    </div>
+                    <div class="tour-body">
+                        <h3 class="tour-name">Island Hopping & Diving</h3>
+                        <div class="tour-meta">
+                            <span><i class="far fa-clock"></i> 6 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Trincomalee</span>
+                        </div>
+                        <div class="tour-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.9 (76 reviews)</span>
+                        </div>
+                        <div class="tour-highlights">
+                            <span><i class="fas fa-check"></i> Pigeon Island</span>
+                            <span><i class="fas fa-check"></i> Scuba Diving</span>
+                            <span><i class="fas fa-check"></i> Coral Reefs</span>
+                        </div>
+                        <div class="tour-footer">
+                            <div class="tour-price">
+                                <span class="price-from">From</span>
+                                <span class="price-amount">$580</span>
+                                <span class="price-per">per person</span>
+                            </div>
+                            <div class="tour-buttons">
+                                <button class="btn-ghost tour-details-btn">View Details</button>
+                                <a href="https://wa.me/94703577490?text=Hello%20Kumarulanka%20Tours!%20I'm%20interested%20in%20Island%20Hopping%20%26%20Diving.%20Please%20send%20details%20and%20availability." class="btn-primary tour-book-btn" target="_blank">Book Now →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour 7: Colombo City & Street Food Tour -->
+                <div class="tour-card tilt-card" data-category="Cultural" data-aos="fade-up" data-aos-delay="600">
+                    <div class="tour-image">
+                        <img src="assets/images/tour-colombo-city.jpg" alt="Colombo City & Street Food Tour" loading="lazy">
+                        <div class="tour-badge">Cultural</div>
+                    </div>
+                    <div class="tour-body">
+                        <h3 class="tour-name">Colombo City & Street Food Tour</h3>
+                        <div class="tour-meta">
+                            <span><i class="far fa-clock"></i> 2 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Colombo</span>
+                        </div>
+                        <div class="tour-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span>4.8 (143 reviews)</span>
+                        </div>
+                        <div class="tour-highlights">
+                            <span><i class="fas fa-check"></i> Street Food Tasting</span>
+                            <span><i class="fas fa-check"></i> City Landmarks</span>
+                            <span><i class="fas fa-check"></i> Local Markets</span>
+                        </div>
+                        <div class="tour-footer">
+                            <div class="tour-price">
+                                <span class="price-from">From</span>
+                                <span class="price-amount">$180</span>
+                                <span class="price-per">per person</span>
+                            </div>
+                            <div class="tour-buttons">
+                                <button class="btn-ghost tour-details-btn">View Details</button>
+                                <a href="https://wa.me/94703577490?text=Hello%20Kumarulanka%20Tours!%20I'm%20interested%20in%20Colombo%20City%20%26%20Street%20Food%20Tour.%20Please%20send%20details%20and%20availability." class="btn-primary tour-book-btn" target="_blank">Book Now →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour 8: Adam's Peak Sunrise Pilgrimage -->
+                <div class="tour-card tilt-card" data-category="Adventure" data-aos="fade-up" data-aos-delay="700">
+                    <div class="tour-image">
+                        <img src="assets/images/tour-adams-peak.jpg" alt="Adam's Peak Sunrise Pilgrimage" loading="lazy">
+                        <div class="tour-badge">Adventure</div>
+                    </div>
+                    <div class="tour-body">
+                        <h3 class="tour-name">Adam's Peak Sunrise Pilgrimage</h3>
+                        <div class="tour-meta">
+                            <span><i class="far fa-clock"></i> 3 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Adam's Peak</span>
+                        </div>
+                        <div class="tour-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.9 (92 reviews)</span>
+                        </div>
+                        <div class="tour-highlights">
+                            <span><i class="fas fa-check"></i> Sunrise Summit</span>
+                            <span><i class="fas fa-check"></i> Sacred Footprint</span>
+                            <span><i class="fas fa-check"></i> Night Hike</span>
+                        </div>
+                        <div class="tour-footer">
+                            <div class="tour-price">
+                                <span class="price-from">From</span>
+                                <span class="price-amount">$280</span>
+                                <span class="price-per">per person</span>
+                            </div>
+                            <div class="tour-buttons">
+                                <button class="btn-ghost tour-details-btn">View Details</button>
+                                <a href="https://wa.me/94703577490?text=Hello%20Kumarulanka%20Tours!%20I'm%20interested%20in%20Adam's%20Peak%20Sunrise%20Pilgrimage.%20Please%20send%20details%20and%20availability." class="btn-primary tour-book-btn" target="_blank">Book Now →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour 9: Ayurveda & Wellness Retreat -->
+                <div class="tour-card tilt-card" data-category="Wellness" data-aos="fade-up" data-aos-delay="800">
+                    <div class="tour-image">
+                        <img src="assets/images/tour-ayurveda.jpg" alt="Ayurveda & Wellness Retreat" loading="lazy">
+                        <div class="tour-badge">Wellness</div>
+                    </div>
+                    <div class="tour-body">
+                        <h3 class="tour-name">Ayurveda & Wellness Retreat</h3>
+                        <div class="tour-meta">
+                            <span><i class="far fa-clock"></i> 7 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Galle</span>
+                        </div>
+                        <div class="tour-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span>4.8 (68 reviews)</span>
+                        </div>
+                        <div class="tour-highlights">
+                            <span><i class="fas fa-check"></i> Ayurveda Treatments</span>
+                            <span><i class="fas fa-check"></i> Yoga Sessions</span>
+                            <span><i class="fas fa-check"></i> Meditation</span>
+                        </div>
+                        <div class="tour-footer">
+                            <div class="tour-price">
+                                <span class="price-from">From</span>
+                                <span class="price-amount">$690</span>
+                                <span class="price-per">per person</span>
+                            </div>
+                            <div class="tour-buttons">
+                                <button class="btn-ghost tour-details-btn">View Details</button>
+                                <a href="https://wa.me/94703577490?text=Hello%20Kumarulanka%20Tours!%20I'm%20interested%20in%20Ayurveda%20%26%20Wellness%20Retreat.%20Please%20send%20details%20and%20availability." class="btn-primary tour-book-btn" target="_blank">Book Now →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour 10: Jaffna & North Sri Lanka Discovery -->
+                <div class="tour-card tilt-card" data-category="Cultural" data-aos="fade-up" data-aos-delay="900">
+                    <div class="tour-image">
+                        <img src="assets/images/tour-jaffna.jpg" alt="Jaffna & North Sri Lanka Discovery" loading="lazy">
+                        <div class="tour-badge">Cultural</div>
+                    </div>
+                    <div class="tour-body">
+                        <h3 class="tour-name">Jaffna & North Sri Lanka Discovery</h3>
+                        <div class="tour-meta">
+                            <span><i class="far fa-clock"></i> 5 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Jaffna</span>
+                        </div>
+                        <div class="tour-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.9 (54 reviews)</span>
+                        </div>
+                        <div class="tour-highlights">
+                            <span><i class="fas fa-check"></i> Nallur Kovil</span>
+                            <span><i class="fas fa-check"></i> Delft Island</span>
+                            <span><i class="fas fa-check"></i> Tamil Cuisine</span>
+                        </div>
+                        <div class="tour-footer">
+                            <div class="tour-price">
+                                <span class="price-from">From</span>
+                                <span class="price-amount">$520</span>
+                                <span class="price-per">per person</span>
+                            </div>
+                            <div class="tour-buttons">
+                                <button class="btn-ghost tour-details-btn">View Details</button>
+                                <a href="https://wa.me/94703577490?text=Hello%20Kumarulanka%20Tours!%20I'm%20interested%20in%20Jaffna%20%26%20North%20Sri%20Lanka%20Discovery.%20Please%20send%20details%20and%20availability." class="btn-primary tour-book-btn" target="_blank">Book Now →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour 11: Rainforest & Waterfall Trail -->
+                <div class="tour-card tilt-card" data-category="Adventure" data-aos="fade-up" data-aos-delay="1000">
+                    <div class="tour-image">
+                        <img src="assets/images/tour-rainforest.jpg" alt="Rainforest & Waterfall Trail" loading="lazy">
+                        <div class="tour-badge">Adventure</div>
+                    </div>
+                    <div class="tour-body">
+                        <h3 class="tour-name">Rainforest & Waterfall Trail</h3>
+                        <div class="tour-meta">
+                            <span><i class="far fa-clock"></i> 4 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Sinharaja</span>
+                        </div>
+                        <div class="tour-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span>4.8 (79 reviews)</span>
+                        </div>
+                        <div class="tour-highlights">
+                            <span><i class="fas fa-check"></i> Sinharaja Trek</span>
+                            <span><i class="fas fa-check"></i> Waterfall Swims</span>
+                            <span><i class="fas fa-check"></i> Bird Watching</span>
+                        </div>
+                        <div class="tour-footer">
+                            <div class="tour-price">
+                                <span class="price-from">From</span>
+                                <span class="price-amount">$350</span>
+                                <span class="price-per">per person</span>
+                            </div>
+                            <div class="tour-buttons">
+                                <button class="btn-ghost tour-details-btn">View Details</button>
+                                <a href="https://wa.me/94703577490?text=Hello%20Kumarulanka%20Tours!%20I'm%20interested%20in%20Rainforest%20%26%20Waterfall%20Trail.%20Please%20send%20details%20and%20availability." class="btn-primary tour-book-btn" target="_blank">Book Now →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour 12: Full Island 10-Day Grand Tour -->
+                <div class="tour-card tilt-card" data-category="Cultural" data-aos="fade-up" data-aos-delay="1100">
+                    <div class="tour-image">
+                        <img src="assets/images/tour-grand-tour.jpg" alt="Full Island 10-Day Grand Tour" loading="lazy">
+                        <div class="tour-badge">Cultural</div>
+                    </div>
+                    <div class="tour-body">
+                        <h3 class="tour-name">Full Island 10-Day Grand Tour</h3>
+                        <div class="tour-meta">
+                            <span><i class="far fa-clock"></i> 10 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Colombo</span>
+                        </div>
+                        <div class="tour-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.9 (201 reviews)</span>
+                        </div>
+                        <div class="tour-highlights">
+                            <span><i class="fas fa-check"></i> Full Island Coverage</span>
+                            <span><i class="fas fa-check"></i> All Highlights</span>
+                            <span><i class="fas fa-check"></i> Luxury Stays</span>
+                        </div>
+                        <div class="tour-footer">
+                            <div class="tour-price">
+                                <span class="price-from">From</span>
+                                <span class="price-amount">$1200</span>
+                                <span class="price-per">per person</span>
+                            </div>
+                            <div class="tour-buttons">
+                                <button class="btn-ghost tour-details-btn">View Details</button>
+                                <a href="https://wa.me/94703577490?text=Hello%20Kumarulanka%20Tours!%20I'm%20interested%20in%20Full%20Island%2010-Day%20Grand%20Tour.%20Please%20send%20details%20and%20availability." class="btn-primary tour-book-btn" target="_blank">Book Now →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== REVIEWS SECTION ========== -->
+    <section class="reviews" id="reviews">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Travelers Say</h2>
+                <p class="section-subtitle">Join hundreds of satisfied travelers who've experienced Sri Lanka with us.</p>
+            </div>
+            <!-- Reviews content from index.html -->
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer" id="footer">
+        <div class="footer-particles" id="footerParticles"></div>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">
+                        <span class="logo-kumarulanka">Kumarulanka</span>
+                        <span class="logo-tours">Tours</span>
+                    </h3>
+                    <p class="footer-tagline">Luxury private Sri Lanka experiences, crafted with passion and expertise.</p>
+                    <div class="social-icons">
+                        <a href="https://facebook.com/kumarulankatours" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/kumarulankatours" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/94703577490" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:kumarulankatours@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-heading">Explore</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tours.html">Tours</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="experiences.html">Experiences</a></li>
+                        <li><a href="vehicles.html">Vehicles</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-heading">Popular Tours</h4>
+                    <ul>
+                        <li><a href="tours.html">Cultural Triangle Discovery</a></li>
+                        <li><a href="tours.html">Ella Mountain Adventure</a></li>
+                        <li><a href="tours.html">Yala & Udawalawe Safari</a></li>
+                        <li><a href="tours.html">South Coast Beach Escape</a></li>
+                        <li><a href="tours.html">Full Island Grand Tour</a></li>
+                        <li><a href="tours.html">Ayurveda & Wellness Retreat</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Sri Lanka</li>
+                        <li><i class="fab fa-whatsapp"></i> +94 70 357 7490</li>
+                        <li><i class="fas fa-envelope"></i> kumarulankatours@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Daily 7:00 AM – 9:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="golden-rule"></div>
+            <div class="footer-bottom">
+                <p>© 2026 Kumarulanka Tours. All Rights Reserved.</p>
+                <p>Made with ❤️ in Sri Lanka</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky WhatsApp CTA -->
+    <div class="mobile-whatsapp-sticky" id="mobileWhatsApp">
+        <a href="https://wa.me/94703577490?text=Hello%20Kumarulanka%20Tours!%20I'd%20like%20to%20book%20a%20tour%20to%20Sri%20Lanka." target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            Chat on WhatsApp
+        </a>
+    </div>
+
+    <!-- Main Script -->
+    <script src="main.js"></script>
+</body>
+</html>
