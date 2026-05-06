@@ -1,0 +1,13 @@
+{
+  "buildCommand": "",
+  "installCommand": "",
+  "public": ".",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/:path((?!.*\\.).*)",
+      "destination": "/$1.html"
+    }
+  ]
+}

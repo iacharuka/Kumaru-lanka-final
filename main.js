@@ -8,8 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Check for reduced motion preference
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    initLoadingScreen(prefersReducedMotion);
+
     if (!prefersReducedMotion) {
-        initLoadingScreen();
         initThreeParticles('heroParticles', 200);
         initThreeParticles('footerParticles', 100);
     }
@@ -41,13 +42,17 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ----- LOADING SCREEN ----- */
-function initLoadingScreen() {
+function initLoadingScreen(prefersReducedMotion = false) {
     const loadingScreen = document.getElementById('loadingScreen');
     const brandName = document.getElementById('brandName');
     const goldenParticles = document.getElementById('goldenParticles');
 
+    if (!loadingScreen) {
+        return;
+    }
+
     // Create golden particles
-    if (goldenParticles) {
+    if (goldenParticles && !prefersReducedMotion) {
         for (let i = 0; i < 30; i++) {
             const particle = document.createElement('div');
             particle.classList.add('particle');
@@ -61,20 +66,25 @@ function initLoadingScreen() {
     // Type-in effect for brand name
     if (brandName) {
         const text = brandName.textContent;
-        brandName.textContent = '';
-        brandName.style.opacity = '1';
+        if (prefersReducedMotion) {
+            brandName.style.opacity = '1';
+            brandName.textContent = text;
+        } else {
+            brandName.textContent = '';
+            brandName.style.opacity = '1';
 
-        setTimeout(() => {
-            let idx = 0;
-            const typeInterval = setInterval(() => {
-                if (idx < text.length) {
-                    brandName.textContent += text[idx];
-                    idx++;
-                } else {
-                    clearInterval(typeInterval);
-                }
-            }, 80);
-        }, 1000);
+            setTimeout(() => {
+                let idx = 0;
+                const typeInterval = setInterval(() => {
+                    if (idx < text.length) {
+                        brandName.textContent += text[idx];
+                        idx++;
+                    } else {
+                        clearInterval(typeInterval);
+                    }
+                }, 80);
+            }, 1000);
+        }
     }
 
     // Hide loading screen after 2.5 seconds
