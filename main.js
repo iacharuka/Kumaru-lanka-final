@@ -87,13 +87,25 @@ function initLoadingScreen(prefersReducedMotion = false) {
         }
     }
 
-    // Hide loading screen after 2.5 seconds
-    setTimeout(() => {
+    const hideLoadingScreen = () => {
         loadingScreen.classList.add('hidden');
-        setTimeout(() => {
-            loadingScreen.style.display = 'none';
-        }, 500);
-    }, 2500);
+        loadingScreen.style.opacity = '0';
+        loadingScreen.style.visibility = 'hidden';
+        loadingScreen.style.pointerEvents = 'none';
+        loadingScreen.style.display = 'none';
+        document.body.style.overflow = '';
+    };
+
+    // Hide the loading screen once the initial reveal has played.
+    setTimeout(hideLoadingScreen, 2500);
+
+    // Safari/iOS fallback in case the first timer is delayed or dropped.
+    window.addEventListener('load', () => {
+        setTimeout(hideLoadingScreen, 100);
+    }, { once: true });
+
+    // Final safety net so the page cannot get stuck on the splash screen.
+    setTimeout(hideLoadingScreen, 6000);
 }
 
 /* ----- HERO CAROUSEL ----- */
