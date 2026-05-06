@@ -256,7 +256,9 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     height: 100vh;
+    height: 100svh;
     height: 100dvh;
+    min-height: -webkit-fill-available;
     background-color: var(--green-deep);
     display: flex;
     align-items: center;
@@ -2320,5 +2322,13 @@ h1, h2, h3, h4, h5, h6 {
     [data-aos] {
         opacity: 1;
         transform: none;
+    }
+
+    .loading-screen,
+    .loading-screen *,
+    .loading-screen.hidden {
+        animation-duration: 0.5s !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.2s !important;
     }
 }
