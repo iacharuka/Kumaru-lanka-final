@@ -629,7 +629,7 @@ function initSearchForm() {
         message += ` Please send details and availability.`;
 
         const encodedMessage = encodeURIComponent(message);
-        window.open(`https://wa.me/94703577490?text=${encodedMessage}`, '_blank');
+        window.open(`https://wa.me/94727357158?text=${encodedMessage}`, '_blank');
     });
 }
 
@@ -657,7 +657,7 @@ function initContactForm() {
         if (message) fullMessage += ` Message: ${message}.`;
 
         const encodedMessage = encodeURIComponent(fullMessage);
-        window.open(`https://wa.me/94703577490?text=${encodedMessage}`, '_blank');
+        window.open(`https://wa.me/94727357158?text=${encodedMessage}`, '_blank');
     });
 }
 
