@@ -88,6 +88,10 @@ function initLoadingScreen(prefersReducedMotion = false) {
     }
 
     const hideLoadingScreen = () => {
+        if (loadingScreen.classList.contains('hidden')) {
+            return;
+        }
+
         loadingScreen.classList.add('hidden');
         loadingScreen.style.opacity = '0';
         loadingScreen.style.visibility = 'hidden';
@@ -96,13 +100,28 @@ function initLoadingScreen(prefersReducedMotion = false) {
         document.body.style.overflow = '';
     };
 
-    // Hide the loading screen once the initial reveal has played.
-    setTimeout(hideLoadingScreen, 2500);
+    let minimumVisibleTimeElapsed = false;
+    let hideRequested = false;
+
+    const requestHideLoadingScreen = () => {
+        hideRequested = true;
+
+        if (minimumVisibleTimeElapsed) {
+            hideLoadingScreen();
+        }
+    };
+
+    // Allow Safari or slower devices to request the hide without forcing it early.
+    setTimeout(() => {
+        minimumVisibleTimeElapsed = true;
+
+        if (hideRequested) {
+            hideLoadingScreen();
+        }
+    }, 2500);
 
     // Safari/iOS fallback in case the first timer is delayed or dropped.
-    window.addEventListener('load', () => {
-        setTimeout(hideLoadingScreen, 100);
-    }, { once: true });
+    window.addEventListener('load', requestHideLoadingScreen, { once: true });
 
     // Final safety net so the page cannot get stuck on the splash screen.
     setTimeout(hideLoadingScreen, 6000);
