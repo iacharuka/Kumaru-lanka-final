@@ -2219,6 +2219,20 @@ h1, h2, h3, h4, h5, h6 {
         grid-template-columns: 1fr;
     }
 
+    .tours .tour-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .tours .tour-image img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+
     .experiences-grid {
         grid-template-columns: repeat(2, 1fr);
     }
